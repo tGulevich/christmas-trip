@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Christmas Road Trip 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#21463b;
+  --gold:#c8a96a;
+  --cream:#f7f4ef;
+  --white:#ffffff;
+  --text:#243028;
+  --muted:#6d746e;
+  --shadow:0 12px 30px rgba(0,0,0,.08);
+  --radius:22px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.7;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  color:var(--green);
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(rgba(22,40,34,.55),rgba(22,40,34,.65)),
+    url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop");
+  background-size:cover;
+  background-position:center;
+  color:white;
+}
+
+.hero .content{
+  max-width:720px;
+}
+
+.hero h1{
+  color:white;
+  font-size:64px;
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.subtitle{
+  font-size:20px;
+  opacity:.92;
+  margin-bottom:35px;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--gold);
+  color:white;
+  padding:14px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+section{
+  padding:80px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  gap:24px;
+}
+
+.grid-2{
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.card{
+  background:white;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:22px;
+}
+
+.timeline{
+  position:relative;
+  margin-top:30px;
+}
+
+.timeline:before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:var(--gold);
+}
+
+.day{
+  position:relative;
+  padding-left:55px;
+  margin-bottom:34px;
+}
+
+.day:before{
+  content:"";
+  position:absolute;
+  left:8px;
+  top:8px;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:var(--green);
+  border:4px solid var(--cream);
+}
+
+.badge{
+  display:inline-block;
+  background:#edf3ef;
+  color:var(--green);
+  padding:5px 12px;
+  border-radius:999px;
+  font-size:13px;
+  margin-bottom:8px;
+}
+
+.budget{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
+
+.price{
+  background:white;
+  padding:24px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+
+.price h3{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.price strong{
+  font-size:30px;
+  color:var(--green);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+th,td{
+  padding:16px;
+  text-align:left;
+}
+
+th{
+  background:var(--green);
+  color:white;
+}
+
+tr:nth-child(even){
+  background:#faf8f5;
+}
+
+.shopping{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:22px;
+}
+
+.shop{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+.shop ul{
+  margin-left:18px;
+  margin-top:10px;
+}
+
+.checklist{
+  background:white;
+  border-radius:20px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.checklist label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:14px 0;
+  cursor:pointer;
+}
+
+.checklist input{
+  width:20px;
+  height:20px;
+}
+
+.footer{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.note{
+  background:#fff9ef;
+  border-left:4px solid var(--gold);
+  padding:18px;
+  border-radius:12px;
+  margin-top:16px;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:42px;}
+section{padding:60px 0;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="container content">
+    <div class="badge" style="background:rgba(255,255,255,.18);color:white;">11–26 декабря 2026</div>
+    <h1>Christmas Road Trip</h1>
+    <p class="subtitle">
+      Путешествие мамы и сына (11 лет): Польша • Чехия • Германия
+    </p>
+    <a href="#route" class="btn">Открыть маршрут</a>
+  </div>
+</header>
+
+<section id="route">
+<div class="container">
+<div class="section-title">
+<h2>Маршрут путешествия</h2>
+<p>2 050 км • SPA • рождественские ярмарки • замок • прогулки</p>
+</div>
+
+<div class="timeline">
+
+<div class="day">
+<div class="badge">11–14 декабря</div>
+<h3>Лодзь</h3>
+<p>У друзей — отдых и подготовка к путешествию.</p>
+</div>
+
+<div class="day">
+<div class="badge">14 декабря</div>
+<h3>Вроцлав</h3>
+<p>Рождественская ярмарка, Рыночная площадь, поиск знаменитых гномов.</p>
+</div>
+
+<div class="day">
+<div class="badge">15 декабря</div>
+<h3>Замок Чоха</h3>
+<p>Ночь в настоящем средневековом замке, башни, тайные проходы и ужин при свечах.</p>
+</div>
+
+<div class="day">
+<div class="badge">16–17 декабря</div>
+<h3>Карловы Вары</h3>
+<p>Два дня полного релакса: термы, сауны, колоннады и рождественские огни.</p>
+</div>
+
+<div class="day">
+<div class="badge">18–20 декабря</div>
+<h3>Bärnau</h3>
+<p>Время с друзьями.</p>
+</div>
+
+<div class="day">
+<div class="badge">21 декабря</div>
+<h3>Гёрлиц</h3>
+<p>Один из самых красивых рождественских городов Германии.</p>
+</div>
+
+<div class="day">
+<div class="badge">22–25 декабря</div>
+<h3>Лодзь</h3>
+<p>Рождество у друзей.</p>
+</div>
+
+<div class="day">
+<div class="badge">26 декабря</div>
+<h3>Возвращение в Минск</h3>
+<p>Ранний выезд домой.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>Главные впечатления</h2>
+</div>
+
+<div class="grid grid-2">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1549893074-7a7d3cb0c80c?q=80&w=1200&auto=format&fit=crop">
+<div class="card-body">
+<h3>Вроцлав 🎄</h3>
+<p>Самая большая рождественская ярмарка Польши, уютные улочки и квест по поиску гномов.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop">
+<div class="card-body">
+<h3>Замок Чоха 🏰</h3>
+<p>Самая необычная ночь путешествия. Почувствовать себя героями сказки.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+<div class="card-body">
+<h3>Карловы Вары ♨️</h3>
+<p>SPA, горячие источники, рождественский поезд и неспешные прогулки.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=1200&auto=format&fit=crop">
+<div class="card-body">
+<h3>Гёрлиц ✨</h3>
+<p>Средневековая Германия без толп туристов и невероятная атмосфера Адвента.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section style="background:#eef3ef;">
+<div class="container">
+<div class="section-title">
+<h2>Бюджет путешествия</h2>
+<p>Все суммы рассчитаны в евро</p>
+</div>
+
+<div class="budget">
+
+<div class="price">
+<h3>Отели</h3>
+<strong>€590</strong>
+</div>
+
+<div class="price">
+<h3>Бензин</h3>
+<strong>€260</strong>
+</div>
+
+<div class="price">
+<h3>Платные дороги</h3>
+<strong>€35</strong>
+</div>
+
+<div class="price">
+<h3>Парковки</h3>
+<strong>€28</strong>
+</div>
+
+<div class="price">
+<h3>Питание</h3>
+<strong>€290</strong>
+</div>
+
+<div class="price" style="background:var(--green);color:white;">
+<h3 style="color:#d9d9d9;">ИТОГО</h3>
+<strong style="color:white;">€1 203</strong>
+</div>
+
+</div>
+
+<div class="note">
+<b>Средний дневной бюджет:</b> €240 в туристические дни. Завтраки включены в стоимость отелей, а дни у друзей не учитываются.
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>Шоппинг-гид</h2>
+</div>
+
+<div class="shopping">
+
+<div class="shop">
+<h3>🛍 Вроцлав</h3>
+<p><b>Лучшее место для покупок</b></p>
+<ul>
+<li>Westfield Wroclavia</li>
+<li>Magnolia Park</li>
+<li>Wrocław Fashion Outlet</li>
+<li>LEGO Store</li>
+</ul>
+<p style="margin-top:12px;color:var(--muted);">Рекомендуем выделить 2–3 часа.</p>
+</div>
+
+<div class="shop">
+<h3>💎 Карловы Вары</h3>
+<p><b>Что привезти</b></p>
+<ul>
+<li>Хрусталь Moser</li>
+<li>Косметика на термальной воде</li>
+<li>Рождественские игрушки</li>
+<li>Чешский фарфор</li>
+</ul>
+</div>
+
+<div class="shop">
+<h3>🎁 Гёрлиц</h3>
+<p><b>Самые атмосферные сувениры</b></p>
+<ul>
+<li>Деревянные игрушки</li>
+<li>Саксонская керамика</li>
+<li>Ремесленный шоколад</li>
+<li>Ёлочные украшения</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<section style="background:#f9f7f3;">
+<div class="container">
+<div class="section-title">
+<h2>Где поесть</h2>
+</div>
+
+<table>
+<tr><th>Город</th><th>Ресторан</th><th>Бюджет</th></tr>
+<tr><td>Вроцлав</td><td>Konspira</td><td>€30–35</td></tr>
+<tr><td>Замок Чоха</td><td>Restauracja Uczta</td><td>€40</td></tr>
+<tr><td>Карловы Вары</td><td>Ventura Pub</td><td>€35</td></tr>
+<tr><td>Гёрлиц</td><td>Lucie Schulte</td><td>€30</td></tr>
+</table>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>Чек-лист перед выездом</h2>
+</div>
+
+<div class="checklist" id="checklist">
+
+<label><input type="checkbox" data-id="0"> Паспорта и страховка</label>
+<label><input type="checkbox" data-id="1"> Чешская электронная виньетка</label>
+<label><input type="checkbox" data-id="2"> Купальники для SPA</label>
+<label><input type="checkbox" data-id="3"> Тёплые зимние ботинки</label>
+<label><input type="checkbox" data-id="4"> Перчатки и шапки</label>
+<label><input type="checkbox" data-id="5"> Термос и кружки</label>
+<label><input type="checkbox" data-id="6"> Зарядка и Power Bank</label>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<h2>Наши воспоминания ❤️</h2>
+<p>Здесь можно потом добавить ваши фотографии и впечатления.</p>
+</div>
+
+<div class="grid grid-2">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop">
+<div class="card-body">
+<h3>Любимый момент поездки</h3>
+<p>____________________________________</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+<div class="card-body">
+<h3>Лучшее фото</h3>
+<p>____________________________________</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<h2 style="color:white;">Christmas Road Trip 2026</h2>
+<p>Mom & Son Edition • Made with ❤️</p>
+</footer>
+
+<script>
+const boxes=document.querySelectorAll('input[type=checkbox]');
+
+boxes.forEach(box=>{
+const id=box.dataset.id;
+box.checked=localStorage.getItem("trip-"+id)==="true";
+
+box.addEventListener("change",()=>{
+localStorage.setItem("trip-"+id,box.checked);
+});
+});
+</script>
+
+</body>
+</html>
