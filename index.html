@@ -3,561 +3,657 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Christmas Road Trip 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Christmas Road Trip 2026 • Mom & Son</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --green:#21463b;
-  --gold:#c8a96a;
-  --cream:#f7f4ef;
-  --white:#ffffff;
-  --text:#243028;
-  --muted:#6d746e;
-  --shadow:0 12px 30px rgba(0,0,0,.08);
-  --radius:22px;
+ --bg:#F6F4EF;
+ --card:rgba(255,255,255,.72);
+ --glass:rgba(255,255,255,.55);
+ --text:#22302A;
+ --muted:#66726C;
+ --green:#1F4338;
+ --gold:#C6A15B;
+ --line:#E5DED2;
+ --shadow:0 20px 50px rgba(30,45,40,.12);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+@media(prefers-color-scheme:dark){
+:root{
+ --bg:#111513;
+ --card:rgba(26,31,29,.75);
+ --glass:rgba(36,42,39,.55);
+ --text:#EFF3F1;
+ --muted:#B6C1BC;
+ --green:#DCE8E3;
+ --line:#2C3431;
+ --shadow:0 20px 50px rgba(0,0,0,.45);
+}
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  line-height:1.7;
+ font-family:Inter,sans-serif;
+ background:var(--bg);
+ color:var(--text);
+ overflow-x:hidden;
 }
 
-h1,h2,h3{
-  font-family:'Playfair Display',serif;
-  color:var(--green);
+body::before{
+ content:"";
+ position:fixed;
+ inset:0;
+ background:
+ radial-gradient(circle at 20% 20%,rgba(255,255,255,.15),transparent 35%),
+ radial-gradient(circle at 80% 10%,rgba(198,161,91,.08),transparent 30%);
+ pointer-events:none;
 }
 
-.container{
-  width:min(1120px,92%);
-  margin:auto;
+nav{
+ position:fixed;
+ top:18px;
+ left:50%;
+ transform:translateX(-50%);
+ width:min(980px,92%);
+ backdrop-filter:blur(20px);
+ background:var(--glass);
+ border:1px solid rgba(255,255,255,.2);
+ border-radius:999px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:12px 22px;
+ z-index:999;
+}
+
+.logo{
+ font-weight:700;
+ color:var(--green);
+}
+
+nav ul{
+ display:flex;
+ gap:18px;
+ list-style:none;
+}
+
+nav a{
+ color:var(--text);
+ text-decoration:none;
+ font-size:14px;
 }
 
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  background:
-    linear-gradient(rgba(22,40,34,.55),rgba(22,40,34,.65)),
-    url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop");
-  background-size:cover;
-  background-position:center;
-  color:white;
+ min-height:100vh;
+ display:grid;
+ place-items:center;
+ position:relative;
 }
 
-.hero .content{
-  max-width:720px;
+.hero img{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ filter:brightness(.55);
 }
 
-.hero h1{
-  color:white;
-  font-size:64px;
-  line-height:1.05;
-  margin-bottom:20px;
+.overlay{
+ position:absolute;
+ inset:0;
+ background:linear-gradient(to bottom,rgba(15,20,18,.35),rgba(15,20,18,.65));
+}
+
+.hero-content{
+ position:relative;
+ z-index:2;
+ text-align:center;
+ color:white;
+ width:min(760px,92%);
+}
+
+.kicker{
+ letter-spacing:.25em;
+ text-transform:uppercase;
+ font-size:13px;
+ opacity:.85;
+ margin-bottom:16px;
+}
+
+h1{
+ font-family:"Playfair Display",serif;
+ font-size:clamp(52px,9vw,96px);
+ line-height:.95;
+ margin-bottom:20px;
 }
 
 .subtitle{
-  font-size:20px;
-  opacity:.92;
-  margin-bottom:35px;
+ font-size:20px;
+ opacity:.9;
+ margin-bottom:40px;
 }
 
 .btn{
-  display:inline-block;
-  background:var(--gold);
-  color:white;
-  padding:14px 28px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
+ display:inline-block;
+ background:var(--gold);
+ color:white;
+ padding:16px 30px;
+ border-radius:999px;
+ text-decoration:none;
+ font-weight:600;
+ box-shadow:var(--shadow);
 }
 
 section{
-  padding:80px 0;
+ width:min(1100px,92%);
+ margin:auto;
+ padding:90px 0;
 }
 
-.section-title{
-  text-align:center;
-  margin-bottom:40px;
+h2{
+ font-family:"Playfair Display",serif;
+ font-size:44px;
+ margin-bottom:10px;
+ color:var(--green);
+}
+
+.section-sub{
+ color:var(--muted);
+ margin-bottom:40px;
 }
 
 .grid{
-  display:grid;
-  gap:24px;
+ display:grid;
+ gap:28px;
 }
 
-.grid-2{
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
 
 .card{
-  background:white;
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
+ background:var(--card);
+ backdrop-filter:blur(20px);
+ border:1px solid rgba(255,255,255,.25);
+ border-radius:28px;
+ overflow:hidden;
+ box-shadow:var(--shadow);
 }
 
 .card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
+ width:100%;
+ height:240px;
+ object-fit:cover;
 }
 
-.card-body{
-  padding:22px;
+.content{padding:24px;}
+
+.badge{
+ display:inline-block;
+ background:rgba(198,161,91,.15);
+ color:var(--gold);
+ padding:6px 12px;
+ border-radius:999px;
+ font-size:12px;
+ margin-bottom:12px;
 }
 
 .timeline{
-  position:relative;
-  margin-top:30px;
+ position:relative;
+ padding-left:34px;
 }
 
-.timeline:before{
-  content:"";
-  position:absolute;
-  left:18px;
-  top:0;
-  bottom:0;
-  width:3px;
-  background:var(--gold);
+.timeline::before{
+ content:"";
+ position:absolute;
+ left:8px;
+ top:0;
+ bottom:0;
+ width:2px;
+ background:linear-gradient(var(--gold),transparent);
 }
 
-.day{
-  position:relative;
-  padding-left:55px;
-  margin-bottom:34px;
+.stop{
+ position:relative;
+ margin-bottom:42px;
 }
 
-.day:before{
-  content:"";
-  position:absolute;
-  left:8px;
-  top:8px;
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  background:var(--green);
-  border:4px solid var(--cream);
+.stop::before{
+ content:"";
+ position:absolute;
+ left:-30px;
+ top:6px;
+ width:16px;
+ height:16px;
+ background:var(--gold);
+ border-radius:50%;
 }
 
-.badge{
-  display:inline-block;
-  background:#edf3ef;
-  color:var(--green);
-  padding:5px 12px;
-  border-radius:999px;
-  font-size:13px;
-  margin-bottom:8px;
+.stop h3{margin-bottom:6px;color:var(--green);}
+
+.metric{
+ text-align:center;
+ padding:28px 16px;
+ background:var(--card);
+ border-radius:22px;
+ box-shadow:var(--shadow);
 }
 
-.budget{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:18px;
-}
-
-.price{
-  background:white;
-  padding:24px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:var(--shadow);
-}
-
-.price h3{
-  font-size:14px;
-  color:var(--muted);
-  margin-bottom:10px;
-}
-
-.price strong{
-  font-size:30px;
-  color:var(--green);
+.metric strong{
+ display:block;
+ font-size:34px;
+ color:var(--green);
+ margin-top:8px;
 }
 
 table{
-  width:100%;
-  border-collapse:collapse;
-  background:white;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
+ width:100%;
+ border-collapse:collapse;
+ background:var(--card);
+ border-radius:24px;
+ overflow:hidden;
+ box-shadow:var(--shadow);
 }
 
-th,td{
-  padding:16px;
-  text-align:left;
-}
-
-th{
-  background:var(--green);
-  color:white;
-}
-
-tr:nth-child(even){
-  background:#faf8f5;
-}
-
-.shopping{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:22px;
-}
-
-.shop{
-  background:white;
-  border-radius:18px;
-  padding:22px;
-  box-shadow:var(--shadow);
-}
-
-.shop ul{
-  margin-left:18px;
-  margin-top:10px;
-}
+th,td{padding:18px;text-align:left}
+th{background:var(--green);color:white}
+tr:nth-child(even){background:rgba(255,255,255,.05)}
 
 .checklist{
-  background:white;
-  border-radius:20px;
-  padding:28px;
-  box-shadow:var(--shadow);
+ display:grid;
+ gap:14px;
+ background:var(--card);
+ padding:26px;
+ border-radius:22px;
+ box-shadow:var(--shadow);
 }
 
 .checklist label{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin:14px 0;
-  cursor:pointer;
+ display:flex;
+ align-items:center;
+ gap:14px;
+ cursor:pointer;
 }
 
-.checklist input{
-  width:20px;
-  height:20px;
+.checklist input{width:22px;height:22px;}
+
+.gallery img{
+ border-radius:20px;
+ aspect-ratio:5/4;
+ object-fit:cover;
 }
 
 .footer{
-  background:var(--green);
-  color:white;
-  text-align:center;
-  padding:40px 20px;
+ text-align:center;
+ padding:70px 20px;
+ color:var(--muted);
 }
 
-.note{
-  background:#fff9ef;
-  border-left:4px solid var(--gold);
-  padding:18px;
-  border-radius:12px;
-  margin-top:16px;
+.snow{
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ z-index:998;
 }
 
-@media(max-width:768px){
-.hero h1{font-size:42px;}
-section{padding:60px 0;}
+.flake{
+ position:absolute;
+ top:-10px;
+ color:white;
+ opacity:.8;
+ animation:fall linear forwards;
+}
+
+@keyframes fall{
+ to{transform:translateY(110vh);}
+}
+
+@media(max-width:760px){
+ nav ul{display:none}
+ h2{font-size:34px}
+ section{padding:70px 0}
 }
 </style>
 </head>
 
 <body>
 
+<div class="snow" id="snow"></div>
+
+<nav>
+<div class="logo">🎄 Road Trip 2026</div>
+<ul>
+<li><a href="#route">Маршрут</a></li>
+<li><a href="#budget">Бюджет</a></li>
+<li><a href="#shopping">Шопинг</a></li>
+<li><a href="#gallery">Фото</a></li>
+</ul>
+</nav>
+
 <header class="hero">
-  <div class="container content">
-    <div class="badge" style="background:rgba(255,255,255,.18);color:white;">11–26 декабря 2026</div>
-    <h1>Christmas Road Trip</h1>
-    <p class="subtitle">
-      Путешествие мамы и сына (11 лет): Польша • Чехия • Германия
-    </p>
-    <a href="#route" class="btn">Открыть маршрут</a>
-  </div>
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1800&auto=format&fit=crop">
+<div class="overlay"></div>
+
+<div class="hero-content">
+<div class="kicker">11–26 декабря 2026</div>
+<h1>Christmas<br>Road Trip</h1>
+<p class="subtitle">
+Мама ❤️ и сын (11 лет)<br>
+Польша · Чехия · Германия
+</p>
+
+<a href="#route" class="btn">Открыть журнал</a>
+</div>
 </header>
 
 <section id="route">
-<div class="container">
-<div class="section-title">
 <h2>Маршрут путешествия</h2>
-<p>2 050 км • SPA • рождественские ярмарки • замок • прогулки</p>
-</div>
+<p class="section-sub">Спокойный отдых • рождественские ярмарки • SPA • замок</p>
+
+<div class="grid grid-2">
 
 <div class="timeline">
 
-<div class="day">
-<div class="badge">11–14 декабря</div>
+<div class="stop">
+<span class="badge">11–14 декабря</span>
 <h3>Лодзь</h3>
-<p>У друзей — отдых и подготовка к путешествию.</p>
+<p>В гостях у друзей. Отдых перед путешествием.</p>
 </div>
 
-<div class="day">
-<div class="badge">14 декабря</div>
+<div class="stop">
+<span class="badge">14 декабря</span>
 <h3>Вроцлав</h3>
-<p>Рождественская ярмарка, Рыночная площадь, поиск знаменитых гномов.</p>
+<p>Рыночная площадь, ярмарка, поиск гномов и вечерний польский ужин.</p>
 </div>
 
-<div class="day">
-<div class="badge">15 декабря</div>
+<div class="stop">
+<span class="badge">15 декабря</span>
 <h3>Замок Чоха</h3>
-<p>Ночь в настоящем средневековом замке, башни, тайные проходы и ужин при свечах.</p>
+<p>Ночь в настоящем средневековом замке, экскурсия и башни.</p>
 </div>
 
-<div class="day">
-<div class="badge">16–17 декабря</div>
+<div class="stop">
+<span class="badge">16–17 декабря</span>
 <h3>Карловы Вары</h3>
-<p>Два дня полного релакса: термы, сауны, колоннады и рождественские огни.</p>
+<p>Два дня полного SPA и рождественской атмосферы.</p>
 </div>
 
-<div class="day">
-<div class="badge">18–20 декабря</div>
+<div class="stop">
+<span class="badge">18–20 декабря</span>
 <h3>Bärnau</h3>
 <p>Время с друзьями.</p>
 </div>
 
-<div class="day">
-<div class="badge">21 декабря</div>
+<div class="stop">
+<span class="badge">21 декабря</span>
 <h3>Гёрлиц</h3>
-<p>Один из самых красивых рождественских городов Германии.</p>
+<p>Самый атмосферный немецкий рождественский город.</p>
 </div>
 
-<div class="day">
-<div class="badge">22–25 декабря</div>
-<h3>Лодзь</h3>
-<p>Рождество у друзей.</p>
-</div>
-
-<div class="day">
-<div class="badge">26 декабря</div>
-<h3>Возвращение в Минск</h3>
-<p>Ранний выезд домой.</p>
+<div class="stop">
+<span class="badge">26 декабря</span>
+<h3>Возвращение домой</h3>
+<p>Лодзь → Минск</p>
 </div>
 
 </div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=1200&auto=format&fit=crop">
+<div class="content">
+<div class="badge">2050 км</div>
+<h3>Идеальный зимний маршрут</h3>
+<p>
+Переезды не превышают 3 часов, кроме возвращения домой.
+Маршрут построен так, чтобы каждый новый город отличался по атмосфере.
+</p>
+</div>
+</div>
+
 </div>
 </section>
 
 <section>
-<div class="container">
-<div class="section-title">
-<h2>Главные впечатления</h2>
-</div>
+<h2>Самые красивые остановки</h2>
 
 <div class="grid grid-2">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1549893074-7a7d3cb0c80c?q=80&w=1200&auto=format&fit=crop">
-<div class="card-body">
-<h3>Вроцлав 🎄</h3>
-<p>Самая большая рождественская ярмарка Польши, уютные улочки и квест по поиску гномов.</p>
+<div class="content">
+<div class="badge">Вроцлав</div>
+<h3>Рождественская сказка</h3>
+<p>Одна из лучших ярмарок Польши, горячий шоколад и знаменитые бронзовые гномы.</p>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop">
-<div class="card-body">
-<h3>Замок Чоха 🏰</h3>
-<p>Самая необычная ночь путешествия. Почувствовать себя героями сказки.</p>
+<div class="content">
+<div class="badge">Замок Чоха</div>
+<h3>Ночь в крепости</h3>
+<p>Главное приключение поездки. Именно этот день станет самым запоминающимся.</p>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
-<div class="card-body">
-<h3>Карловы Вары ♨️</h3>
-<p>SPA, горячие источники, рождественский поезд и неспешные прогулки.</p>
+<div class="content">
+<div class="badge">Карловы Вары</div>
+<h3>SPA & Relax</h3>
+<p>Термальные бассейны, вафли, колоннады и неспешные зимние прогулки.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=1200&auto=format&fit=crop">
-<div class="card-body">
-<h3>Гёрлиц ✨</h3>
-<p>Средневековая Германия без толп туристов и невероятная атмосфера Адвента.</p>
+<img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200&auto=format&fit=crop">
+<div class="content">
+<div class="badge">Гёрлиц</div>
+<h3>Немецкий Адвент</h3>
+<p>Старинные улочки, деревянные игрушки и атмосфера рождественского фильма.</p>
 </div>
 </div>
 
-</div>
 </div>
 </section>
 
-<section style="background:#eef3ef;">
-<div class="container">
-<div class="section-title">
+<section id="budget">
 <h2>Бюджет путешествия</h2>
-<p>Все суммы рассчитаны в евро</p>
-</div>
+<p class="section-sub">Расчёт для мамы и сына · в евро</p>
 
-<div class="budget">
+<div class="grid grid-3">
 
-<div class="price">
-<h3>Отели</h3>
-<strong>€590</strong>
-</div>
-
-<div class="price">
-<h3>Бензин</h3>
-<strong>€260</strong>
-</div>
-
-<div class="price">
-<h3>Платные дороги</h3>
-<strong>€35</strong>
-</div>
-
-<div class="price">
-<h3>Парковки</h3>
-<strong>€28</strong>
-</div>
-
-<div class="price">
-<h3>Питание</h3>
-<strong>€290</strong>
-</div>
-
-<div class="price" style="background:var(--green);color:white;">
-<h3 style="color:#d9d9d9;">ИТОГО</h3>
-<strong style="color:white;">€1 203</strong>
-</div>
+<div class="metric">🏨<strong>590 €</strong>Отели</div>
+<div class="metric">⛽<strong>260 €</strong>Бензин</div>
+<div class="metric">🛣️<strong>35 €</strong>Платные дороги</div>
+<div class="metric">🅿️<strong>28 €</strong>Парковки</div>
+<div class="metric">🍽️<strong>290 €</strong>Питание</div>
+<div class="metric" style="background:linear-gradient(135deg,#1F4338,#315F50);color:white;">✨<strong style="color:white;">1203 €</strong>Общий бюджет</div>
 
 </div>
 
-<div class="note">
-<b>Средний дневной бюджет:</b> €240 в туристические дни. Завтраки включены в стоимость отелей, а дни у друзей не учитываются.
-</div>
+<br><br>
 
-</div>
+<table>
+<tr>
+<th>Дата</th>
+<th>Город</th>
+<th>Бюджет</th>
+</tr>
+<tr>
+<td>14 дек</td>
+<td>Вроцлав</td>
+<td>55 €</td>
+</tr>
+<tr>
+<td>15 дек</td>
+<td>Замок Чоха</td>
+<td>180 €</td>
+</tr>
+<tr>
+<td>16 дек</td>
+<td>Карловы Вары</td>
+<td>180 €</td>
+</tr>
+<tr>
+<td>17 дек</td>
+<td>Карловы Вары</td>
+<td>70 €</td>
+</tr>
+<tr>
+<td>21 дек</td>
+<td>Гёрлиц</td>
+<td>50 €</td>
+</tr>
+</table>
 </section>
 
-<section>
-<div class="container">
-<div class="section-title">
+<section id="shopping">
 <h2>Шоппинг-гид</h2>
-</div>
 
-<div class="shopping">
+<div class="grid grid-3">
 
-<div class="shop">
-<h3>🛍 Вроцлав</h3>
-<p><b>Лучшее место для покупок</b></p>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?q=80&w=900&auto=format&fit=crop">
+<div class="content">
+<h3>Вроцлав</h3>
+<p><b>Лучшие покупки</b></p>
 <ul>
 <li>Westfield Wroclavia</li>
 <li>Magnolia Park</li>
-<li>Wrocław Fashion Outlet</li>
+<li>Fashion Outlet</li>
 <li>LEGO Store</li>
 </ul>
-<p style="margin-top:12px;color:var(--muted);">Рекомендуем выделить 2–3 часа.</p>
+</div>
 </div>
 
-<div class="shop">
-<h3>💎 Карловы Вары</h3>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?q=80&w=900&auto=format&fit=crop">
+<div class="content">
+<h3>Карловы Вары</h3>
 <p><b>Что привезти</b></p>
 <ul>
 <li>Хрусталь Moser</li>
-<li>Косметика на термальной воде</li>
-<li>Рождественские игрушки</li>
-<li>Чешский фарфор</li>
+<li>Косметика</li>
+<li>Ёлочные игрушки</li>
+<li>Фарфор</li>
 </ul>
 </div>
+</div>
 
-<div class="shop">
-<h3>🎁 Гёрлиц</h3>
-<p><b>Самые атмосферные сувениры</b></p>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?q=80&w=900&auto=format&fit=crop">
+<div class="content">
+<h3>Гёрлиц</h3>
+<p><b>Самые уютные сувениры</b></p>
 <ul>
 <li>Деревянные игрушки</li>
-<li>Саксонская керамика</li>
-<li>Ремесленный шоколад</li>
-<li>Ёлочные украшения</li>
+<li>Шоколад</li>
+<li>Керамика</li>
+<li>Украшения</li>
 </ul>
 </div>
-
 </div>
-</div>
-</section>
-
-<section style="background:#f9f7f3;">
-<div class="container">
-<div class="section-title">
-<h2>Где поесть</h2>
-</div>
-
-<table>
-<tr><th>Город</th><th>Ресторан</th><th>Бюджет</th></tr>
-<tr><td>Вроцлав</td><td>Konspira</td><td>€30–35</td></tr>
-<tr><td>Замок Чоха</td><td>Restauracja Uczta</td><td>€40</td></tr>
-<tr><td>Карловы Вары</td><td>Ventura Pub</td><td>€35</td></tr>
-<tr><td>Гёрлиц</td><td>Lucie Schulte</td><td>€30</td></tr>
-</table>
 
 </div>
 </section>
 
 <section>
-<div class="container">
-<div class="section-title">
-<h2>Чек-лист перед выездом</h2>
-</div>
+<h2>Любимые рестораны</h2>
 
-<div class="checklist" id="checklist">
+<table>
+<tr>
+<th>Город</th>
+<th>Ресторан</th>
+<th>Средний счёт</th>
+</tr>
+<tr>
+<td>Вроцлав</td>
+<td>Konspira</td>
+<td>30–35 €</td>
+</tr>
+<tr>
+<td>Чоха</td>
+<td>Restauracja Uczta</td>
+<td>40 €</td>
+</tr>
+<tr>
+<td>Карловы Вары</td>
+<td>Ventura Pub</td>
+<td>35 €</td>
+</tr>
+<tr>
+<td>Гёрлиц</td>
+<td>Lucie Schulte</td>
+<td>30 €</td>
+</tr>
+</table>
+</section>
 
+<section>
+<h2>Чек-лист путешествия</h2>
+
+<div class="checklist">
 <label><input type="checkbox" data-id="0"> Паспорта и страховка</label>
 <label><input type="checkbox" data-id="1"> Чешская электронная виньетка</label>
 <label><input type="checkbox" data-id="2"> Купальники для SPA</label>
-<label><input type="checkbox" data-id="3"> Тёплые зимние ботинки</label>
+<label><input type="checkbox" data-id="3"> Тёплые ботинки</label>
 <label><input type="checkbox" data-id="4"> Перчатки и шапки</label>
-<label><input type="checkbox" data-id="5"> Термос и кружки</label>
-<label><input type="checkbox" data-id="6"> Зарядка и Power Bank</label>
-
-</div>
+<label><input type="checkbox" data-id="5"> Power Bank</label>
+<label><input type="checkbox" data-id="6"> Термос</label>
 </div>
 </section>
 
-<section>
-<div class="container">
-<div class="section-title">
-<h2>Наши воспоминания ❤️</h2>
-<p>Здесь можно потом добавить ваши фотографии и впечатления.</p>
-</div>
+<section id="gallery">
+<h2>Наши воспоминания</h2>
+<p class="section-sub">После поездки просто замените изображения на свои фотографии.</p>
 
-<div class="grid grid-2">
+<div class="grid grid-2 gallery">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop">
-<div class="card-body">
-<h3>Любимый момент поездки</h3>
-<p>____________________________________</p>
-</div>
-</div>
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=900&auto=format&fit=crop">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
-<div class="card-body">
-<h3>Лучшее фото</h3>
-<p>____________________________________</p>
-</div>
-</div>
+<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=900&auto=format&fit=crop">
 
-</div>
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=900&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=900&auto=format&fit=crop">
+
 </div>
 </section>
 
 <footer class="footer">
-<h2 style="color:white;">Christmas Road Trip 2026</h2>
-<p>Mom & Son Edition • Made with ❤️</p>
+<h3 style="font-family:'Playfair Display';font-size:34px;color:var(--green);">
+Christmas Road Trip 2026
+</h3>
+<p>Made with ❤️ for Mom & Son</p>
 </footer>
 
 <script>
-const boxes=document.querySelectorAll('input[type=checkbox]');
-
-boxes.forEach(box=>{
-const id=box.dataset.id;
-box.checked=localStorage.getItem("trip-"+id)==="true";
-
-box.addEventListener("change",()=>{
-localStorage.setItem("trip-"+id,box.checked);
+document.querySelectorAll('input[type=checkbox]').forEach(box=>{
+ const key='trip-'+box.dataset.id;
+ box.checked=localStorage.getItem(key)==='true';
+ box.onchange=()=>localStorage.setItem(key,box.checked);
 });
-});
+
+const snow=document.getElementById('snow');
+
+function createFlake(){
+ const f=document.createElement('div');
+ f.className='flake';
+ f.innerHTML='❄';
+ f.style.left=Math.random()*100+'vw';
+ f.style.fontSize=(10+Math.random()*14)+'px';
+ f.style.animationDuration=(6+Math.random()*8)+'s';
+ snow.appendChild(f);
+ setTimeout(()=>f.remove(),15000);
+}
+setInterval(createFlake,260);
 </script>
 
 </body>
